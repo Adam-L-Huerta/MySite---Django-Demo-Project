@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <img src="media/img/main.jpg" class="main-image" style="width:100%">
+    <div class="container"><br/><br/>
+        <p class="text-center">
+            With God's inspired word as our guide, we strive to follow the New Testament pattern for conversion, worship
+            and Christian life. We want to be simply Christian in the things we do in service to the Lord. We seek to
+            study God's word diligently and practice what we find in its pages so that those who are part of our
+            Christian family here are devoted to PRAISING our God, PARTICIPATING in the work of the church on earth,
+            and PROCLAIMING the truth of the Gospel and the excellencies of our Father to the world. </p>
+
+        <h2 class="text-center">Our Mission</h2>
+        <p class="text-center">We strive bring glory to God by the equipping of the saints for the work of service, to
+            the building up of the body of Christ; until we all attain to the unity of the faith, and of the knowledge
+            of the Son of God (Ephesians 4:12-13).</p>
+
+        <h2 class="text-center">Our Values</h2>
+        <p class="text-center">With prayerful recognition of the authority and sovereignty of the Almighty God, we will
+            always endeavor to:</p>
+        <p class="text-center values">
+            Bring glory and praise to God.<br/>
+            Save souls and keep them saved.<br/>
+            Be biblically balanced, scripturally sound and Christ-centered.<br/>
+            Edify one another as a spiritual family.<br/>
+            Treat all people with love, compassion and respect.</p>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+                <h1 class="thin center text-center">Recent Posts</h1>
+            </div>
+
+            {% for post in posts %}
+                <div class="col-md-4">
+                    <div class="main-image card h-100 embed-responsive embed-responsive-16by9">
+                        <img src="{{ post.image.url}}" class="card-img embed-responsive-item">
+                    </div>
+                    <div class="card-img-overlay">
+                        <h5 class="card-title"><a href="/post/{{ post.slug }}" class="text-white">{{ post.title }}</a></h5>
+                        </div>
+                     <p class="card-text">{{ post.summary }}</p>
+                </div>
+
+            {% endfor %}
+
+             </div>
+        </div>
+{% endblock %}
